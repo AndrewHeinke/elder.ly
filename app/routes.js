@@ -23,6 +23,12 @@ module.exports = function(app, passport) {
     res.redirect('/');
   });
 
+  app.post('/signup', passport.authenticate('local-signup', {
+    successRedirect: '/profile',
+    failureRedirect: '/signup',
+    failureFlash: true
+  }));
+
   function isLoggedIn(req, res, next) {
     if (req.isAuthenticated()) {
       return next();
