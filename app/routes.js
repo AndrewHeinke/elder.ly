@@ -1,19 +1,19 @@
 module.exports = function(app, passport) {
 
   app.get('/', function(req, res) {
-    res.render('index');
+    res.render('pages/index');
   });
 
   app.get('/login', function(req,res) {
-    res.render('login', {message: req.flash('loginMessage')});
+    res.render('pages/login', {message: req.flash('loginMessage')});
   });
 
   app.get('/signup', function(req,res) {
-    res.render('signup', {message: req.flash('signupMessage')});
+    res.render('pages/signup', {message: req.flash('signupMessage')});
   });
 
-  app.get('/profile', isLogginIn, function(req, res) {
-    res.render('profile', {
+  app.get('/profile', isLoggedIn, function(req, res) {
+    res.render('pages/profile', {
       user: req.user
     });
   });
