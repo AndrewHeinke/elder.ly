@@ -1,10 +1,10 @@
 var express = require('express');
+var app = express();
 var mongoose = require('mongoose');
 var passport = require('passport');
 var flash = require('connect-flash');
 
-//create an express instance
-var app = express();
+
 //establish the port to listen on
 var PORT = process.env.PORT || 4444;
 

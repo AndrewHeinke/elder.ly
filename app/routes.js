@@ -29,12 +29,17 @@ module.exports = function(app, passport) {
     failureFlash: true
   }));
 
+  app.post('/login', passport.authenticate('local-login', {
+    sucessRedirect: '/profile',
+    failureRedirect: '/login',
+    failureFlash: true
+  }));
+
   function isLoggedIn(req, res, next) {
     if (req.isAuthenticated()) {
       return next();
     }
     res.redirect('/');
   }
-
 
 };
