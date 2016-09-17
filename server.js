@@ -13,6 +13,11 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var session = require('express-session');
 
+var configDB = require('./config/database.js');
+
+// database configuration
+mongoose.connect(configDB.url);
+
 // log requests to the console
 app.use(morgan('dev'));
 // read cookies for auth
@@ -35,9 +40,8 @@ app.use(flash()); // use connect-flash for flash messages stored in session
 //serve static content from the public directory
 app.use(express.static('./public'));
 
-//import and use the controller routes
-var routes = require('./controllers/controller.js');
-app.use('/', routes);
+// load routes and configured passport
+require('./app/routes.js')(app, passport);
 
 //listen on the assigned port
 app.listen(PORT, function() {
