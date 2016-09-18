@@ -4,7 +4,6 @@ var mongoose = require('mongoose');
 var passport = require('passport');
 var flash = require('connect-flash');
 
-
 //establish the port to listen on
 var PORT = process.env.PORT || 4444;
 
@@ -14,7 +13,6 @@ var bodyParser = require('body-parser');
 var session = require('express-session');
 
 var configDB = require('./config/database.js');
-
 
 // database configuration
 mongoose.connect(configDB.url);
