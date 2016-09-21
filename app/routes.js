@@ -30,7 +30,7 @@ module.exports = function(app, passport) {
   }));
 
   app.post('/login', passport.authenticate('local-login', {
-    sucessRedirect: '/profile',
+    successRedirect: '/profile',
     failureRedirect: '/login',
     failureFlash: true
   }));
