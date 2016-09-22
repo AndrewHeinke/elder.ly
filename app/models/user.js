@@ -9,11 +9,19 @@ var userSchema = mongoose.Schema ({
     },
     lastName: {
       type: String,
-      require: true,
+      required: true,
     },
     dob: {
       type: Date,
       required: true,
+    },
+    city: {
+      type: String,
+      required: true,
+    },
+    state: {
+      type: String,
+      require: true,
     },
     joinedOn: {
       type: Date,
