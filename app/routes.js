@@ -35,6 +35,12 @@ module.exports = function(app, passport) {
     failureFlash: true
   }));
 
+  app.post('/upload', function(req, res){
+  var imageStream = fs.createReadStream(req.files.image.path, { encoding: 'binary' }), cloudStream = cloudinary.uploader.upload_stream(function() { res.redirect('/'); });
+
+  imageStream.on('data', cloudStream.write).on('end', cloudStream.end);
+  });
+
   function isLoggedIn(req, res, next) {
     if (req.isAuthenticated()) {
       return next();

@@ -3,6 +3,9 @@ var app = express();
 var mongoose = require('mongoose');
 var passport = require('passport');
 var flash = require('connect-flash');
+var fs = require('fs');
+// for image uploading and cloud hosting
+var cloudinary = require('cloudinary');
 
 //establish the port to listen on
 var PORT = process.env.PORT || 4444;
@@ -29,6 +32,9 @@ app.use(bodyParser.json({type:'application/vnd.api+json'}));
 
 // set up ejs for templating
 app.set('view engine', 'ejs');
+
+app.locals.api_key = cloudinary.config().api_key;
+app.locals.cloud_name = cloudinary.config().cloud_name;
 
 // required for passport
 app.use(session({ secret: 'andrewissoawesome' })); // session secret
