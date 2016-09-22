@@ -31,6 +31,12 @@ module.exports = function(passport) {
         }
         else {
           var newUser = new User();
+          var imageFile = req.files.uploadImg;
+          console.log(uploadImg);
+          cloudinary.uploader.upload(imageFile.path, function(result) {
+            console.log(result);
+            console.log("Secure URL:" + result.secure_url);
+          });
           newUser.local.email = email;
           newUser.local.password = newUser.generateHash(password);
           newUser.local.firstName = req.body.firstName;
@@ -38,6 +44,7 @@ module.exports = function(passport) {
           newUser.local.dob = req.body.dob;
           newUser.local.city = req.body.city;
           newUser.local.state = req.body.state;
+          newUser.local.uploadImg = result.secure_url;
 
           newUser.save(function(err) {
             if (err) {

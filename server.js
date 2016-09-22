@@ -5,6 +5,8 @@ var passport = require('passport');
 var flash = require('connect-flash');
 var fs = require('fs');
 // for image uploading and cloud hosting
+var multer  = require('multer');
+
 var cloudinary = require('cloudinary');
 
 //establish the port to listen on
@@ -16,6 +18,12 @@ var bodyParser = require('body-parser');
 var session = require('express-session');
 
 var configDB = require('./config/database.js');
+
+cloudinary.config({
+  cloud_name: 'elderly',
+  api_key: '493872447385646',
+  api_secret: '-C4kGCmiQlDdjgCGNFBL2MWSf6w'
+});
 
 // database configuration
 mongoose.connect(configDB.url);
@@ -33,9 +41,6 @@ app.use(bodyParser.json({type:'application/vnd.api+json'}));
 // set up ejs for templating
 app.set('view engine', 'ejs');
 
-app.locals.api_key = cloudinary.config().api_key;
-app.locals.cloud_name = cloudinary.config().cloud_name;
-
 // required for passport
 app.use(session({ secret: 'andrewissoawesome' })); // session secret
 app.use(passport.initialize());
@@ -47,7 +52,7 @@ app.use(express.static('./public'));
 
 require('./config/passport.js')(passport);
 // load routes and configured passport
-require('./app/routes.js')(app, passport);
+require('./app/routes.js')(app, passport, multer);
 
 //listen on the assigned port
 app.listen(PORT, function() {

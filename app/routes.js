@@ -1,4 +1,5 @@
-module.exports = function(app, passport) {
+
+module.exports = function(app, passport, multer) {
 
   app.get('/', function(req, res) {
     res.render('pages/index');
@@ -23,7 +24,7 @@ module.exports = function(app, passport) {
     res.redirect('/');
   });
 
-  app.post('/signup', passport.authenticate('local-signup', {
+  app.post('/signup', app.use(multer({dest:'./public/uploads/'}).single('uploadImg')),passport.authenticate('local-signup', {
     successRedirect: '/profile',
     failureRedirect: '/signup',
     failureFlash: true
@@ -34,12 +35,6 @@ module.exports = function(app, passport) {
     failureRedirect: '/login',
     failureFlash: true
   }));
-
-  app.post('/upload', function(req, res){
-  var imageStream = fs.createReadStream(req.files.image.path, { encoding: 'binary' }), cloudStream = cloudinary.uploader.upload_stream(function() { res.redirect('/'); });
-
-  imageStream.on('data', cloudStream.write).on('end', cloudStream.end);
-  });
 
   function isLoggedIn(req, res, next) {
     if (req.isAuthenticated()) {

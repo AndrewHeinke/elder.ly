@@ -35,6 +35,10 @@ var userSchema = mongoose.Schema ({
       type: String,
       required: true,
     },
+    uploadImg: {
+      type: String,
+      require: true,
+    }
 
   }
 });
