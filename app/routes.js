@@ -24,7 +24,7 @@ module.exports = function(app, passport, multer) {
     res.redirect('/');
   });
 
-  app.post('/signup', app.use(multer({dest:'./public/uploads/'}).single('uploadImg')),passport.authenticate('local-signup', {
+  app.post('/signup', passport.authenticate('local-signup', {
     successRedirect: '/profile',
     failureRedirect: '/signup',
     failureFlash: true

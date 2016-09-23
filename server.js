@@ -6,8 +6,9 @@ var flash = require('connect-flash');
 var fs = require('fs');
 // for image uploading and cloud hosting
 var multer  = require('multer');
-
-var cloudinary = require('cloudinary');
+app.use(multer({
+  dest: './public/uploads/'
+}).single('uploadImg'));
 
 //establish the port to listen on
 var PORT = process.env.PORT || 4444;
@@ -19,11 +20,7 @@ var session = require('express-session');
 
 var configDB = require('./config/database.js');
 
-cloudinary.config({
-  cloud_name: 'elderly',
-  api_key: '493872447385646',
-  api_secret: '-C4kGCmiQlDdjgCGNFBL2MWSf6w'
-});
+
 
 // database configuration
 mongoose.connect(configDB.url);

@@ -1,5 +1,10 @@
 var LocalStrategy = require('passport-local').Strategy;
-
+var cloudinary = require('cloudinary');
+cloudinary.config({
+  cloud_name: 'elderly',
+  api_key: '493872447385646',
+  api_secret: '-C4kGCmiQlDdjgCGNFBL2MWSf6w'
+});
 var User = require('../app/models/user.js');
 
 module.exports = function(passport) {
@@ -31,27 +36,26 @@ module.exports = function(passport) {
         }
         else {
           var newUser = new User();
-          var imageFile = req.files.uploadImg;
-          console.log(uploadImg);
+          var imageFile = req.file;
           cloudinary.uploader.upload(imageFile.path, function(result) {
-            console.log(result);
-            console.log("Secure URL:" + result.secure_url);
-          });
-          newUser.local.email = email;
-          newUser.local.password = newUser.generateHash(password);
-          newUser.local.firstName = req.body.firstName;
-          newUser.local.lastName = req.body.lastName;
-          newUser.local.dob = req.body.dob;
-          newUser.local.city = req.body.city;
-          newUser.local.state = req.body.state;
-          newUser.local.uploadImg = result.secure_url;
+            newUser.local.email = email;
+            newUser.local.password = newUser.generateHash(password);
+            newUser.local.firstName = req.body.firstName;
+            newUser.local.lastName = req.body.lastName;
+            newUser.local.dob = req.body.dob;
+            newUser.local.city = req.body.city;
+            newUser.local.state = req.body.state;
+            newUser.local.uploadImg = result.secure_url;
 
-          newUser.save(function(err) {
-            if (err) {
-              throw err;
-            }
-            return done(null, newUser);
-          });
+            newUser.save(function(err) {
+              if (err) {
+                throw err;
+              }
+              return done(null, newUser);
+            });
+          },
+          // applies image transformations to incoming images, cropping, face recognition
+          {width: 300, height: 300, gravity: "face", radius: "max", crop: "crop", tags: "profileImg"},{width: 150});
         }
       });
     });
