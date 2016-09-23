@@ -3,7 +3,6 @@ var app = express();
 var mongoose = require('mongoose');
 var passport = require('passport');
 var flash = require('connect-flash');
-var fs = require('fs');
 // for image uploading and cloud hosting
 var multer  = require('multer');
 app.use(multer({
@@ -19,8 +18,6 @@ var bodyParser = require('body-parser');
 var session = require('express-session');
 
 var configDB = require('./config/database.js');
-
-
 
 // database configuration
 mongoose.connect(configDB.url);
