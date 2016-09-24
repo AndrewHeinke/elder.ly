@@ -13,7 +13,7 @@
 
 /* ======= Base ======= */
 body {
-    padding-top: 100px; /* Required padding for .navbar-fixed-top. Change if height of navigation changes. */
+    padding-top: 90px; /* Required padding for .navbar-fixed-top. Change if height of navigation changes. */
 }
 
 h1,
@@ -28,10 +28,10 @@ h6 {
 }
 a {
   color: #61E294;
-  -webkit-transition: all 0.4s ease-in-out;
-  -moz-transition: all 0.4s ease-in-out;
-  -ms-transition: all 0.4s ease-in-out;
-  -o-transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
 }
 a:hover {
   text-decoration: underline;
@@ -50,6 +50,8 @@ a:hover {
 
 .navbar-fixed-top {
   padding-top: 10px;
+  border-bottom: 2px solid #9DB4C0;
+  background: #fff;
 }
 
 .navbar-fixed-top .nav {
@@ -59,8 +61,37 @@ a:hover {
 .navbar-fixed-top .navbar-brand {
     padding: 0 15px;
 }
+.nav>li>a {
+  font-size: 1.25em;
+  color: #292F36;
+}
 
-/*Profile Page*/
+.nav>li>a:focus, .nav>li>a:hover {
+  background: none;
+  color: #61E294;
+}
+/* ======= Homepage Banner =======*/
+.jumbotron {
+  text-align: center;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  background-color: #61E294;
+  color: #fff;
+}
+
+#banner-button {
+  background: transparent;
+  border: 3px solid #fff;
+  padding: 5px 20px;
+  font-size: 1.5em;
+  color: #fff;
+}
+
+.display-3 {
+  font-weight: 700;
+}
+
+/* ======= Profile Page ======= */
 .profile-pic {
   border-radius: 50%;
 }
@@ -70,7 +101,12 @@ a:hover {
 /* Extra small devices (phones, less than 768px) */
 @media(min-width:768px) {
     body {
-        padding-top: 100px; /* Required padding for .navbar-fixed-top. Change if height of navigation changes. */
+        padding-top: 60px; /* Required padding for .navbar-fixed-top. Change if height of navigation changes. */
+    }
+    #elderly-logo {
+      width: 200px;
+      height: auto;
+      color: #fff;
     }
 
     .navbar-fixed-top .navbar-brand {
