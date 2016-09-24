@@ -5,6 +5,7 @@
   <% include ../partials/head %>
 </head>
 <body>
+  <% include ../partials/navbar %>
   <div class="container">
     <div class="page-header text-center">
       <h1>Profile Page</h1>
@@ -14,9 +15,9 @@
         <!-- LOCAL INFORMATION -->
       <div class="col-sm-6">
         <div class="well">
-          <h3><i class="material-icons md-48">person</i> User Information</h3>
+          <h3> User Information</h3>
             <p>
-              <img class="img-responsive" src='<%= user.local.uploadImg %>'/><br/>
+              <img class="img-responsive profile-pic" src='<%= user.local.uploadImg %>'/><br/>
               <strong>ID</strong>: <%= user._id %><br>
               <strong>First Name</strong>: <%= user.local.firstName %><br>
               <strong>Last Name</strong>: <%= user.local.lastName %><br>

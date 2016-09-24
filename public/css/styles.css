@@ -10,3 +10,73 @@
 /* Rules for using icons as white on a dark background. */
 .material-icons.md-light { color: rgba(255, 255, 255, 1); }
 .material-icons.md-light.md-inactive { color: rgba(255, 255, 255, 0.3); }
+
+/* ======= Base ======= */
+body {
+    padding-top: 100px; /* Required padding for .navbar-fixed-top. Change if height of navigation changes. */
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  color: #61E294;
+}
+a {
+  color: #61E294;
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  -ms-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+}
+a:hover {
+  text-decoration: underline;
+  color: #0e98c5;
+}
+
+.navbar-toggle .icon-bar {
+  background: #9DB4C0;
+}
+/* ======= Header ======= */
+#elderly-logo {
+  width: 250px;
+  height: auto;
+  color: #fff;
+}
+
+.navbar-fixed-top {
+  padding-top: 10px;
+}
+
+.navbar-fixed-top .nav {
+  padding: 15px 0;
+}
+
+.navbar-fixed-top .navbar-brand {
+    padding: 0 15px;
+}
+
+/*Profile Page*/
+.profile-pic {
+  border-radius: 50%;
+}
+
+
+
+/* Extra small devices (phones, less than 768px) */
+@media(min-width:768px) {
+    body {
+        padding-top: 100px; /* Required padding for .navbar-fixed-top. Change if height of navigation changes. */
+    }
+
+    .navbar-fixed-top .navbar-brand {
+        padding: 15px 0;
+    }
+}
+/* Small devices (tablets, 768px and up) */
+/* Medium devices (desktops, 992px and up) */
+/* Large devices (large desktops, 1200px and up) */

@@ -55,7 +55,7 @@ module.exports = function(passport) {
             });
           },
           // applies image transformations to incoming images, cropping, face recognition
-          {width: 300, height: 300, gravity: "face", radius: "max", crop: "crop", tags: "profileImg"},{width: 150});
+          {width: 300, height: 300, gravity: "face", crop: "crop", tags: "profileImg"},{width: 150});
         }
       });
     });
