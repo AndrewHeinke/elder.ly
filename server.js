@@ -3,7 +3,7 @@ var app = express();
 var mongoose = require('mongoose');
 var passport = require('passport');
 var flash = require('connect-flash');
-// for image uploading and cloud hosting
+// for image uploading and cloudinary hosting
 var multer  = require('multer');
 app.use(multer({
   dest: './public/uploads/'
@@ -39,6 +39,13 @@ app.set('view engine', 'ejs');
 app.use(session({ secret: 'andrewissoawesome' })); // session secret
 app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
+
+// pass active user session to template so I know who is logged in
+app.use(function (req, res, next) {
+  res.locals.login = req.isAuthenticated();
+  next();
+});
+
 app.use(flash()); // use connect-flash for flash messages stored in session
 
 //serve static content from the public directory
@@ -46,7 +53,7 @@ app.use(express.static('./public'));
 
 require('./config/passport.js')(passport);
 // load routes and configured passport
-require('./app/routes.js')(app, passport, multer);
+require('./app/routes.js')(app, passport);
 
 //listen on the assigned port
 app.listen(PORT, function() {

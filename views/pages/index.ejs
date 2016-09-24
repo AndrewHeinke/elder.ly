@@ -16,7 +16,13 @@
           <div class="container">
             <h1 class="display-3">Care that feels like family.</h1>
             <p>Lorem Khaled Ipsum is a major key to success. I’m up to something. Another one. Another one. Another one. Another one. Another one. Another one.</p>
-            <p><a href="/signup" id="banner-button" class="btn">Sign Up</a></p>
+            <p>
+              <% if(login){ %>
+                <a href="/profile" id="banner-button" class="btn">Get Started</a>
+              <% } else { %>
+              <a href="/signup" id="banner-button" class="btn">Sign Up</a>
+              <% } %>
+            </p>
           </div>
         </div>
       </div>

@@ -1,8 +1,10 @@
 
-module.exports = function(app, passport, multer) {
+module.exports = function(app, passport) {
 
   app.get('/', function(req, res) {
-    res.render('pages/index');
+    res.render('pages/index', {
+      user: req.user
+    });
   });
 
   app.get('/login', function(req,res) {
