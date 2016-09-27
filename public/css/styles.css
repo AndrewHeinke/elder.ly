@@ -40,7 +40,7 @@ a:hover {
 }
 
 .navbar-toggle .icon-bar {
-  background: #9DB4C0;
+  background: #292F36;
 }
 /* ======= Header ======= */
 #elderly-logo {
@@ -71,6 +71,12 @@ a:hover {
   background: none;
   color: #61E294;
 }
+
+#login-link {
+  
+}
+
+
 /* ======= Homepage Banner =======*/
 .jumbotron {
   text-align: center;
