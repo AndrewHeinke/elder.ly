@@ -1,35 +1,45 @@
 <!-- views/profile.ejs -->
 <!doctype html>
 <html>
+
 <head>
   <% include ../partials/head %>
 </head>
+
 <body>
   <% include ../partials/navbar %>
-  <div class="container">
-    <div class="page-header text-center">
-      <h1>Profile Page</h1>
-    </div>
-    <div class="row">
-        <!-- LOCAL INFORMATION -->
-      <div class="col-sm-6">
-        <div class="well">
-          <h3> User Information</h3>
-            <p>
-              <img class="img-responsive profile-pic" src='<%= user.local.uploadImg %>'/><br/>
-              <strong>ID</strong>: <%= user._id %><br>
-              <strong>First Name</strong>: <%= user.local.firstName %><br>
-              <strong>Last Name</strong>: <%= user.local.lastName %><br>
-              <strong>Date of Birth</strong>: <%= user.local.dob %><br>
-              <strong>City</strong>: <%= user.local.city %><br>
-              <strong>State</strong>: <%= user.local.state %><br>
-              <strong>Email</strong>: <%= user.local.email %><br>
-              <strong>Password</strong>: <%= user.local.password %>
-            </p>
-        </div>
+    <div class="container">
+      <div class="page-header text-center">
+        <h1>Profile</h1>
       </div>
+      <div class="row">
+        <ul id="accordion" class="accordion">
+          <li>
+            <div class="col col_4 iamgurdeep-pic">
+              <img class="img-responsive iamgurdeeposahan" alt="profile image" src='<%= user.local.uploadImg %>' />
+              <div class="username">
+                <h2><%= user.local.firstName %> <%= user.local.lastName %> </h2>
+                <p><i class="fa fa-briefcase"></i> Volunteer at Elderly</p>
+                <p><i class="fa fa-map-marker"></i>  <%= user.local.city %>, <%= user.local.state %></p>
+              </div>
+            </div>
+          </li>
+          <li class="default open profile-info">
+            <div class="info-tab">Information</div>
+            <ul class="submenu">
+              <li><a href="#"><i class="fa fa-calendar"></i> 24 years old</a></li>
+              <li><a href="mailto:<%= user.local.email %>"><i class="fa fa-envelope"></i><%= user.local.email %></a></li>
+              <li><a href="#"><i class="fa fa-phone"></i> 521.867.5309</a></li>
+            </ul>
+          </li>
+        </ul>
+        </li>
+        </ul>
+      </div>
+
     </div>
-  </div>
-  <% include ../partials/body %>
+
+    <% include ../partials/body %>
 </body>
+
 </html>
