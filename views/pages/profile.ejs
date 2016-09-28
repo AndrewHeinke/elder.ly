@@ -13,10 +13,12 @@
         <h1>Profile</h1>
       </div>
       <div class="row">
+        <div class="col-md-5">
+
         <ul id="accordion" class="accordion">
           <li>
-            <div class="col col_4 iamgurdeep-pic">
-              <img class="img-responsive iamgurdeeposahan" alt="profile image" src='<%= user.local.uploadImg %>' />
+            <div class="profile-card">
+              <img class="img-responsive profile-card-pic" alt="profile image" src='<%= user.local.uploadImg %>' />
               <div class="username">
                 <h2><%= user.local.firstName %> <%= user.local.lastName %> </h2>
                 <p><i class="fa fa-briefcase"></i> Volunteer at Elderly</p>
@@ -27,15 +29,14 @@
           <li class="default open profile-info">
             <div class="info-tab">Information</div>
             <ul class="submenu">
-              <li><a href="#"><i class="fa fa-calendar"></i> 24 years old</a></li>
+              <li><a href="#"><i class="fa fa-user"></i> 24 years old</a></li>
               <li><a href="mailto:<%= user.local.email %>"><i class="fa fa-envelope"></i><%= user.local.email %></a></li>
               <li><a href="#"><i class="fa fa-phone"></i> 521.867.5309</a></li>
             </ul>
           </li>
         </ul>
-        </li>
-        </ul>
       </div>
+    </div>
 
     </div>
 

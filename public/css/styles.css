@@ -13,171 +13,6 @@ body {
   /* Required padding for .navbar-fixed-top. Change if height of navigation changes. */
 }
 
-
-/* ======= Profile Card ======= */
-
-.iamgurdeep-pic {
-  position: relative;
-}
-
-.username {
-  bottom: 0;
-  color: #ffffff;
-  padding: 30px 15px 4px;
-  position: absolute;
-  width: 100%;
-  text-shadow: 1px 1px 2px #000000;
-  background: -moz-linear-gradient(top, rgba(0, 0, 0, 0) 0%, #292F36 100%);
-  /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%, #292F36 100%);
-  /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, #292F36 100%);
-  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a64d4d4d', GradientType=0);
-  /* IE6-9 */
-}
-
-.username p {
-  display: inline-block;
-  margin-right: 15px;
-}
-
-.iamgurdeeposahan {
-  border-radius: 7px 7px 0 0;
-  width: 100%;
-}
-
-.photosgurdeep {
-  padding: 10px 9px 4px 35px;
-}
-
-ul {
-  list-style-type: none;
-}
-
-a {
-  color: #292F36;
-  text-decoration: none;
-}
-
-.submenu .iamgurdeeposahan {
-  background: rgba(255, 255, 255, 0.1) none repeat scroll 0 0 !important;
-  border-radius: 50%;
-  height: 60px;
-  padding: 2px;
-  width: 60px;
-}
-
-.photosgurdeep a {
-  background: #ffffff none repeat scroll 0 0;
-  border-radius: 50%;
-  display: inline-block !important;
-  padding: 0 !important;
-}
-
-.username h2 {
-  font-size: 2em;
-  font-weight: 400;
-  position: relative;
-  text-shadow: 2px 2px 3px #000000;
-  color: #ffffff;
-}
-
-.username .fa {
-  color: #ffffff;
-  font-size: 14px;
-  position: static;
-}
-
-h1 {
-  color: #FFF;
-  font-size: 24px;
-  font-weight: 400;
-  text-align: center;
-  margin-top: 40px;
-}
-
-h1 a {
-  color: #c12c42;
-  font-size: 16px;
-}
-
-.accordion {
-  width: 100%;
-  max-width: 400px;
-  margin: 30px auto 20px;
-  background: #FFF;
-  -webkit-border-radius: 7px;
-  -moz-border-radius: 7px;
-  border-radius: 7px;
-  box-shadow: 0 19px 38px rgba(0,0,0,0.20), 0 15px 12px rgba(0,0,0,0.15);
-}
-
-.accordion .info-tab {
-  display: block;
-  padding: 10px 5px 10px 12px;
-  color: #4D4D4D;
-  font-size: 1.5em;
-  font-weight: 700;
-  border-bottom: 1px solid #efefef;
-  position: relative;
-}
-
-.profile-info {
-  border-radius: 0 0 7px 7px;
-}
-
-.accordion li:last-child .link {
-  border-bottom: 0;
-}
-
-.submenu li:last-child {
-  border-bottom: none;
-}
-
-.accordion li .fa {
-  top: 16px;
-  left: 12px;
-  font-size: 1.25em;
-  color: #61E294;
-  margin-right: 15px;
-}
-
-.accordion p {
-  font-size: 1.25em;
-}
-
-.accordion p .fa {
-  color: #ffffff;
-  margin-right: 5px;
-}
-
-.accordion li.default .submenu {
-  display: block;
-  border-radius: 0 0 7px 7px;
-}
-
-.submenu {
-  display: none;
-  background: #ffffff;
-  font-size: 1.25em;
-}
-
-.submenu li {
-  /*border-bottom: 1px solid #9DB4C0;*/
-}
-
-.submenu a {
-  display: block;
-  text-decoration: none;
-  color: #292F36;
-  padding: 12px;
-}
-
-.submenu a:hover {
-  text-decoration: none;
-}
-
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
@@ -192,11 +27,6 @@ a {
     -o-transition: all 0.2s ease-in-out;
 }
 
-a:hover {
-    text-decoration: underline;
-    color: #0e98c5;
-    cursor: pointer;
-}
 
 .navbar-toggle .icon-bar {
     background: #292F36;
@@ -236,6 +66,149 @@ a:hover {
 }
 
 #login-link {}
+
+  /* ======= Profile Card ======= */
+
+  .profile-card {
+    position: relative;
+  }
+
+  .username {
+    bottom: 0;
+    color: #ffffff;
+    padding: 30px 15px 4px;
+    position: absolute;
+    width: 100%;
+    text-shadow: 1px 1px 2px #000000;
+    background: -moz-linear-gradient(top, rgba(0, 0, 0, 0) 0%, #292F36 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%, #292F36 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, #292F36 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a64d4d4d', GradientType=0);
+    /* IE6-9 */
+  }
+
+  .username p {
+    display: inline-block;
+    margin-right: 15px;
+  }
+
+  .profile-card-pic {
+    border-radius: 7px 7px 0 0;
+    width: 100%;
+  }
+
+  ul {
+    list-style-type: none;
+  }
+
+  a {
+    color: #292F36;
+    text-decoration: none;
+  }
+
+  .submenu .profile-card-pic {
+    background: rgba(255, 255, 255, 0.1) none repeat scroll 0 0 !important;
+    border-radius: 50%;
+    height: 60px;
+    padding: 2px;
+    width: 60px;
+  }
+
+  .username h2 {
+    font-size: 2em;
+    font-weight: 400;
+    position: relative;
+    text-shadow: 2px 2px 3px #000000;
+    color: #ffffff;
+  }
+
+  .username .fa {
+    color: #ffffff;
+    font-size: 14px;
+    position: static;
+  }
+
+  .accordion {
+    width: 100%;
+    max-width: 400px;
+    margin: 30px auto 20px;
+    background: #FFF;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    border-radius: 7px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1), 0 3px 6px rgba(0,0,0,0.15);
+  }
+
+  .accordion .info-tab {
+    display: block;
+    padding: 10px 5px 10px 12px;
+    color: #4D4D4D;
+    font-size: 1.5em;
+    font-weight: 700;
+    border-bottom: 1px solid #efefef;
+    position: relative;
+  }
+
+  .profile-info {
+    border-radius: 0 0 7px 7px;
+  }
+
+  .accordion li:last-child .link {
+    border-bottom: 0;
+  }
+
+  .submenu li:last-child {
+    border-bottom: none;
+  }
+
+  .accordion li .fa {
+    top: 16px;
+    left: 12px;
+    font-size: 1.25em;
+    color: #61E294;
+    margin-right: 15px;
+  }
+
+  .accordion p {
+    font-size: 1.25em;
+  }
+
+  .accordion p .fa {
+    color: #ffffff;
+    margin-right: 5px;
+    font-size: 1em;
+  }
+
+  .accordion li.default .submenu {
+    display: block;
+    border-radius: 0 0 7px 7px;
+  }
+
+  .submenu {
+    display: none;
+    background: #ffffff;
+    font-size: 1.25em;
+  }
+
+  .submenu li {
+    /*border-bottom: 1px solid #9DB4C0;*/
+  }
+
+  .submenu a {
+    display: block;
+    text-decoration: none;
+    color: #292F36;
+    padding: 12px;
+  }
+
+  .submenu a:hover {
+    text-decoration: none;
+  }
+
+
 
 
 /* ======= Homepage Banner =======*/
