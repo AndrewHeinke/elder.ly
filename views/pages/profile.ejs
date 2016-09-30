@@ -19,7 +19,12 @@
               <img class="img-responsive profile-card-pic" alt="profile image" src='<%= user.local.uploadImg %>' />
               <div class="username">
                 <h2><%= user.local.firstName %> <%= user.local.lastName %> </h2>
-                <p><i class="fa fa-briefcase"></i> Volunteer</p>
+                <%if (user.local.userType == "volunteer") { %>
+                <p><i class="fa fa-briefcase"></i>Volunteer</p>
+                <% }
+                else{ %>
+                   <p><i class="fa fa-user"></i>Member</p>
+                <% } %>
                 <p><i class="fa fa-map-marker"></i>  <%= user.local.city %>, <%= user.local.state %></p>
               </div>
             </div>
@@ -27,7 +32,7 @@
           <li class="default open profile-info">
             <div class="info-tab">Avg. Rating: <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-o"></i></div>
             <ul class="submenu">
-              <li><a href="#"><i class="fa fa-user"></i> 24 years old</a></li>
+              <li><a href="#"><i class="fa fa-birthday-cake"></i> 24 years old</a></li>
               <li><a href="mailto:<%= user.local.email %>"><i class="fa fa-envelope"></i><%= user.local.email %></a></li>
               <li><a href="#"><i class="fa fa-phone"></i> 521.867.5309</a></li>
             </ul>

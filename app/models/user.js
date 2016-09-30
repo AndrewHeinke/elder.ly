@@ -6,7 +6,6 @@ var userSchema = mongoose.Schema ({
     userType: {
       type: String,
       required: true,
-      default: "User",
     },
     firstName: {
       type: String,
@@ -26,7 +25,7 @@ var userSchema = mongoose.Schema ({
     },
     state: {
       type: String,
-      require: true,
+      required: true,
     },
     joinedOn: {
       type: Date,
@@ -42,9 +41,12 @@ var userSchema = mongoose.Schema ({
     },
     uploadImg: {
       type: String,
-      require: true,
+      required: true,
+    },
+    online: {
+      type: Boolean,
+      default: false,
     }
-
   }
 });
 

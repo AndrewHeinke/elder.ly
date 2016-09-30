@@ -6,26 +6,34 @@
 <body>
   <% include ../partials/navbar %>
   <div class="container">
-    <div class="col-sm-6 col-sm-offset-3">
-        <h1><span class="fa fa-sign-in"></span> Sign Up</h1>
+    <div class="col-lg-8 col-lg-offset-2">
+        <h1 class="text-center"><span class="fa fa-sign-in"></span> Sign Up</h1>
         <!-- show any messages that come back with authentication -->
         <% if (message.length > 0) { %>
             <div class="alert alert-danger"><%= message %></div>
         <% } %>
         <!-- LOGIN FORM -->
         <form action="/signup" method="post" enctype="multipart/form-data">
-          <h4 id="buttonTitle">What kind of user are you?</h4>
-          <button type="button" class="userSelect btn btn-warning btn-lg" name="button">I need help</button>
-          <button type="button" class="userSelect btn btn-warning btn-lg" name="button">I want to help</button>
-          <fieldset disabled>
-          <div class="form-group input-group-lg">
-              <label>User Type</label>
-              <input type="text" class="form-control" id="disabledTextInput" name="userType" placeholder="Please select a button option above">
+          <div class="buttonChoices text-center">
+            <h4 id="buttonTitle" class="text-center">What kind of user are you?</h4>
+            <button type="button" id="usrBtn" class="userSelect btn btn-warning btn-lg center-block" name="button">I need help</button>
+            <button id="volunteerBtn" type="button" class="userSelect btn btn-warning btn-lg center-block" name="button">I want to help</button>
           </div>
-          </fieldset>
+
+          <div id="userType-display">
+          </div>
+
+          <div class="form-group input-group-lg">
+              <label>User Type:</label>
+              <select class="form-control" id="userType" name="userType" placeholder="Please select a user type">
+                <option value="" disabled selected hidden>Select option from buttons</option>
+                <option value="member">Member</option>
+                <option value="volunteer">Volunteer</option>
+              </select>
+          </div>
           <div class="form-group input-group-lg">
               <label>First Name</label>
-              <input type="text" class="form-control" name="firstName" placeholder="First Name" autofocus>
+              <input type="text" class="form-control" name="firstName" placeholder="First Name">
           </div>
           <div class="form-group input-group-lg">
               <label>Last Name</label>
@@ -33,7 +41,7 @@
           </div>
             <div class="form-group input-group-lg">
                 <label>Email</label>
-                <input type="text" class="form-control" name="email">
+                <input type="text" class="form-control" placeholder="john.smith@gmail.com" name="email">
             </div>
             <div class="form-group input-group-lg">
                 <label>Password</label>
@@ -114,8 +122,6 @@
     </div>
   </div>
 <% include ../partials/body %>
-<script type="text/javascript">
-
-</script>
+<script type="text/javascript" src="/js/main.js"></script>
 </body>
 </html>

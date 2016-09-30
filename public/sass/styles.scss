@@ -2,6 +2,7 @@
 $primary-green: #61E294;
 $gunmetal-color: #292F36;
 $wild-blue-gray: #9DB4C0;
+$brdr-radius: 7px;
 
 /* ======= Base ======= */
 
@@ -31,10 +32,32 @@ a {
     -moz-transition: all 0.2s ease-in-out;
     -ms-transition: all 0.2s ease-in-out;
 }
-
+.btn {
+  background-color: $primary-green;
+  border-color: $primary-green;
+  &:active {
+    background: $primary-green;
+    border-color: $primary-green;
+    box-shadow: none;
+  }
+  &:hover {
+    background-color: darken($primary-green, 20%);
+    border-color: darken($primary-green, 20%);
+  }
+}
 .btn-warning {
   background-color: $primary-green;
   border-color: $primary-green;
+  &:active:focus {
+    background: $primary-green;
+    border-color: $primary-green;
+    box-shadow: none;
+    outline: none;
+  }
+  &:hover {
+    background-color: darken($primary-green, 20%);
+    border-color: darken($primary-green, 20%);
+  }
 }
 
 
@@ -140,9 +163,9 @@ a {
   max-width: 400px;
   margin: 0px auto 20px;
   background: #FFF;
-  -webkit-border-radius: 7px;
-  -moz-border-radius: 7px;
-  border-radius: 7px;
+  -webkit-border-radius: $brdr-radius;
+  -moz-border-radius: $brdr-radius;
+  border-radius: $brdr-radius;
   .info-tab {
     display: block;
     padding: 10px 5px 10px 12px;
@@ -218,7 +241,7 @@ a {
 .comment-review {
   background: #ffffff;
   padding: 20px;
-  border-radius: 7px;
+  border-radius: $brdr-radius;
   p {
     font-family: "Helvetica Neue";
     font-size: 16px;
@@ -250,16 +273,84 @@ a {
 }
 
 /* ======= Sign Up Form =======*/
+  form {
+    .form-control:focus {
+      outline: none;
+      box-shadow: none;
+      border: 2px solid $primary-green;
+    }
+  
+    #buttonTitle {
+      color: $gunmetal-color;
+      margin-top: 0px;
+      margin-bottom: 15px;
+      font-size: 2em;
+      @media screen and (max-width:768px) {
+        font-size: 1.5em;
+      }
+    }
+    .userSelect {
+      width: 40%;
+      display: inline-block;
+      margin: 0 10px;
+      font-weight: 700;
+      font-size: 1.5em;
+      border: 3px solid $primary-green;
+      background-color: #ffffff;
+      color: $gunmetal-color;
 
-  #buttonTitle {
-    color: $gunmetal-color;
+      &:focus {
+        background: $primary-green;
+        outline:none;
+        border: 3px solid $primary-green;
+      }
+      @media screen and (max-width:768px) {
+        display: block;
+        margin: 10px auto;
+        width: 90%;
+      }
+    }
+    .buttonChoices {
+      margin-top: 20px;
+      margin-bottom: 20px;
+      background: #ffffff;
+      padding: 20px 10px;
+      border: 2px solid $wild-blue-gray;
+      border-radius: $brdr-radius;
+    }
+    #user-type-text {
+      color: #ffffff;
+      font-size: 1.75em;
+      font-weight: 700;
+      background: $primary-green;
+      padding: 10px;
+      text-align: center;
+      border-radius: $brdr-radius;
+    }
+    #user-type-description {
+      color: $gunmetal-color;
+      font-size: 1.5em;
+      font-weight: 400;
+      background: #ffffff;
+      border: 2px solid $wild-blue-gray;
+      padding: 20px;
+      text-align: center;
+      border-radius: $brdr-radius;
+      @media screen and (max-width:768px) {
+        padding: 10px;
+        font-size: 1.25em;
+        text-align: left;
+      }
+    }
+    #userType-display {
+      margin-bottom: 20px;
+    }
   }
 
 
 /* ======= Profile Page ======= */
 
 .profile-pic {
-  /*border-radius: 50%;*/
   width: 100px;
   height: auto;
 }
