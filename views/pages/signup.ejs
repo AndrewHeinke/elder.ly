@@ -7,42 +7,51 @@
   <% include ../partials/navbar %>
   <div class="container">
     <div class="col-sm-6 col-sm-offset-3">
-        <h1><span class="fa fa-sign-in"></span> Signup</h1>
+        <h1><span class="fa fa-sign-in"></span> Sign Up</h1>
         <!-- show any messages that come back with authentication -->
         <% if (message.length > 0) { %>
             <div class="alert alert-danger"><%= message %></div>
         <% } %>
         <!-- LOGIN FORM -->
         <form action="/signup" method="post" enctype="multipart/form-data">
-          <div class="form-group">
+          <h4 id="buttonTitle">What kind of user are you?</h4>
+          <button type="button" class="userSelect btn btn-warning btn-lg" name="button">I need help</button>
+          <button type="button" class="userSelect btn btn-warning btn-lg" name="button">I want to help</button>
+          <fieldset disabled>
+          <div class="form-group input-group-lg">
+              <label>User Type</label>
+              <input type="text" class="form-control" id="disabledTextInput" name="userType" placeholder="Please select a button option above">
+          </div>
+          </fieldset>
+          <div class="form-group input-group-lg">
               <label>First Name</label>
               <input type="text" class="form-control" name="firstName" placeholder="First Name" autofocus>
           </div>
-          <div class="form-group">
+          <div class="form-group input-group-lg">
               <label>Last Name</label>
               <input type="text" class="form-control" placeholder="Last Name" name="lastName">
           </div>
-            <div class="form-group">
+            <div class="form-group input-group-lg">
                 <label>Email</label>
                 <input type="text" class="form-control" name="email">
             </div>
-            <div class="form-group">
+            <div class="form-group input-group-lg">
                 <label>Password</label>
                 <input type="password" class="form-control" name="password">
             </div>
-            <div class="form-group">
+            <div class="form-group input-group-lg">
                 <label>Profile Picture</label>
                 <input type="file" class="form-control" name="uploadImg">
             </div>
-            <div class="form-group">
+            <div class="form-group input-group-lg">
                 <label>Date of Birth</label>
                 <input type="date" class="form-control" name="dob">
             </div>
-            <div class="form-group">
+            <div class="form-group input-group-lg">
                 <label>City</label>
                 <input type="text" class="form-control" placeholder="City" name="city">
             </div>
-            <div class="form-group">
+            <div class="form-group input-group-lg">
                 <label>State</label>
                 <select class="form-control" id="state" name="state">
             			<option value="">N/A</option>
@@ -100,11 +109,13 @@
             			<option value="WY">Wyoming</option>
             		</select>
             </div>
-            <button type="submit" class="btn btn-warning btn-lg">Signup</button>
+            <button type="submit" class="btn btn-warning btn-lg">Sign Up</button>
         </form>
     </div>
   </div>
 <% include ../partials/body %>
+<script type="text/javascript">
 
+</script>
 </body>
 </html>

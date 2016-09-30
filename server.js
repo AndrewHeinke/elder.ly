@@ -3,6 +3,12 @@ var app = express();
 var mongoose = require('mongoose');
 var passport = require('passport');
 var flash = require('connect-flash');
+
+var sassMiddleware = require('node-sass-middleware');
+var serveStatic = require('serve-static');
+var srcPath = __dirname + '/public/sass';
+var destPath = __dirname + '/public/css';
+
 // for image uploading and cloudinary hosting
 var multer  = require('multer');
 app.use(multer({
@@ -48,8 +54,19 @@ app.use(function (req, res, next) {
 
 app.use(flash()); // use connect-flash for flash messages stored in session
 
+app.use('/css',
+  sassMiddleware({
+    src: srcPath,
+    dest: destPath,
+    debug: true,
+    outputStyle: 'compressed',
+  })
+);
+
 //serve static content from the public directory
-app.use(express.static('./public'));
+app.use('/',
+  serveStatic('./public', {})
+);
 
 require('./config/passport.js')(passport);
 // load routes and configured passport

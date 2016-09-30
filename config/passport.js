@@ -39,6 +39,7 @@ module.exports = function(passport) {
           var imageFile = req.file;
           // cloudinary method to handle image upload and returns me an object, I only need the secure result url to display the image
           cloudinary.uploader.upload(imageFile.path, function(result) {
+            newUser.local.userType = req.body.userType;
             newUser.local.email = email;
             newUser.local.password = newUser.generateHash(password);
             newUser.local.firstName = req.body.firstName;

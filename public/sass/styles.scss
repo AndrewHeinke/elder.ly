@@ -32,13 +32,17 @@ a {
     -ms-transition: all 0.2s ease-in-out;
 }
 
-
-.navbar-toggle .icon-bar {
-  background: $gunmetal-color;
+.btn-warning {
+  background-color: $primary-green;
+  border-color: $primary-green;
 }
 
 
 /* ======= Header ======= */
+
+.navbar-toggle .icon-bar {
+  background: $gunmetal-color;
+}
 
 #elderly-logo {
   width: 250px;
@@ -244,6 +248,12 @@ a {
 .display-3 {
   font-weight: 700;
 }
+
+/* ======= Sign Up Form =======*/
+
+  #buttonTitle {
+    color: $gunmetal-color;
+  }
 
 
 /* ======= Profile Page ======= */
