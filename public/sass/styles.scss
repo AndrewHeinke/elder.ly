@@ -279,7 +279,11 @@ a {
       box-shadow: none;
       border: 2px solid $primary-green;
     }
-  
+
+    .hide-this {
+      display: none;
+    }
+
     #buttonTitle {
       color: $gunmetal-color;
       margin-top: 0px;
