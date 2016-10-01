@@ -109,11 +109,11 @@ a {
   position: absolute;
   width: 100%;
   text-shadow: 1px 1px 2px #000000;
-  background: -moz-linear-gradient(top, rgba(0, 0, 0, 0) 0%, $gunmetal-color 100%);
+  background: -moz-linear-gradient(top, rgba(0, 0, 0, 0) 0%, #000000 100%);
   /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%, $gunmetal-color 100%);
+  background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%, #000000 100%);
   /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, $gunmetal-color 100%);
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, #000000 100%);
   /* IE6-9 */
   p {
     display: inline-block;
@@ -358,6 +358,79 @@ a {
   width: 100px;
   height: auto;
 }
+
+/* ======= Search Page ======= */
+.helper-container {
+  padding: 0px;
+
+  h1 {
+    font-size: 3em;
+    color: $gunmetal-color;
+    border-bottom: 2px solid $primary-green;
+    padding-bottom: 10px;
+    @media screen and (max-width:768px) {
+      font-size: 2em;
+    }
+  }
+}
+
+.view-profile {
+  margin-top: 10px;
+  a {
+    background: $primary-green;
+    color: #ffffff;
+    border-radius: $brdr-radius;
+    padding: 5px 10px;
+    font-size: 1.25em;
+    text-decoration: none;
+    margin-top: 5px;
+    &:hover {
+      text-decoration: none;
+      background-color: darken($primary-green, 20%);
+      color: #ffffff;
+    }
+  }
+}
+.helpersList {
+  margin-bottom: 10px;
+  display: inline;
+  padding: 10px;
+  @media screen and (max-width:768px) {
+    padding: 5px;
+  }
+
+  .search-card {
+    background: #ffffff;
+    border-radius: $brdr-radius;
+    // filter: drop-shadow(0 8px 10px rgba(0, 0, 0, 0.12))
+    //         drop-shadow(0 3px 14px rgba(0, 0, 0, 0.14))
+    //         drop-shadow(0 5px 5px rgba(0, 0, 0, 0.12))
+		// 				drop-shadow(0 -2px 4px rgba(0, 0, 0, 0.1));
+  }
+
+  .profile-card-pic {
+    width: 140px;
+    height: 140px;
+    border-radius: 7px 0 0 7px;
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 10px;
+  }
+  .user-details {
+    display: inline-block;
+    padding: 10px 0;
+    p {
+      color: $gunmetal-color;
+      font-size: 1.25em;
+      margin-bottom: 0px;
+      .fa-star, .fa-star-half-o {
+        color: #F1C40F;
+      }
+    }
+
+  }
+}
+
 
 /* Extra small devices (phones, less than 768px) */
 

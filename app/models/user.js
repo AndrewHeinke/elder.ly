@@ -19,6 +19,10 @@ var userSchema = mongoose.Schema ({
       type: Date,
       required: true,
     },
+    phoneNumber: {
+      type: String,
+      required: true,
+    },
     city: {
       type: String,
       required: true,

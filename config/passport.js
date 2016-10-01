@@ -47,6 +47,7 @@ module.exports = function(passport) {
             newUser.local.dob = req.body.dob;
             newUser.local.city = req.body.city;
             newUser.local.state = req.body.state;
+            newUser.local.phoneNumber = req.body.phoneNumber;
             newUser.local.uploadImg = result.secure_url;
 
             newUser.save(function(err) {

@@ -4,6 +4,7 @@ var mongoose = require('mongoose');
 var passport = require('passport');
 var flash = require('connect-flash');
 
+// variables for sass middleware to compile to css
 var sassMiddleware = require('node-sass-middleware');
 var serveStatic = require('serve-static');
 var srcPath = __dirname + '/public/sass';
@@ -54,6 +55,7 @@ app.use(function (req, res, next) {
 
 app.use(flash()); // use connect-flash for flash messages stored in session
 
+// auto compiles sass to css
 app.use('/css',
   sassMiddleware({
     src: srcPath,

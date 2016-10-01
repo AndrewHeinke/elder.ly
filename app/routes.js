@@ -21,6 +21,12 @@ module.exports = function(app, passport) {
     });
   });
 
+  app.get('/search', isLoggedIn, function(req, res) {
+    res.render('pages/search', {
+      user: req.user
+    });
+  });
+
   app.get('/logout', function(req, res) {
     req.logout();
     res.redirect('/');
