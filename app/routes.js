@@ -23,7 +23,10 @@ module.exports = function(app, passport) {
   });
 
   app.get('/search', isLoggedIn, function(req, res) {
-    User.find({}, function(err, doc) {
+    var userState = req.user.local.state;
+    var userCity = req.user.local.city;
+    // want to query the database so it will only return users who are volunteers and are in the same city and state as the member trying to access the search page
+    User.find({'local.userType' : 'volunteer', 'local.state' : userState, 'local.city' : userCity}, function(err, doc) {
       if (err) {
         res.send(err);
       }
