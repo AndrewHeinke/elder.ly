@@ -2,6 +2,7 @@
 <html>
 <head>
   <% include ../partials/head %>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
 </head>
 <body>
   <% include ../partials/navbar %>
@@ -11,51 +12,23 @@
         <div class="col-lg-12">
             <h1 class="text-center">Find helpers in your city</h1>
         </div>
-            <div class="helpersList col-lg-4 col-sm-6 col-xs-12">
-              <div class="search-card">
-                  <img class="img-responsive profile-card-pic" alt="profile image" src='<%= user.local.uploadImg %>' />
-                <div class="user-details">
-                  <p>
-                    <%= user.local.firstName %> <%= user.local.lastName %>
-                  </p>
-                  <p><i class="fa fa-map-marker"></i>  <%= user.local.city %>, <%= user.local.state %></p>
-                  <p class="star-rating">Rating: <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-o"></i></p>
-                  <div class="view-profile">
-                    <a href="#">View Profile</a>
-                  </div>
+        <% for(var i=0; i<list.length; i++) { %>
+          <div class="helpersList col-lg-4 col-sm-6 col-xs-12">
+            <div class="search-card">
+                <img class="img-responsive profile-card-pic" alt="profile image" src='<%= list[i].local.uploadImg %>' />
+              <div class="user-details">
+                <p>
+                  <%= list[i].local.firstName %> <%= list[i].local.lastName %>
+                </p>
+                <p><i class="fa fa-map-marker"></i>  <%= list[i].local.city %>, <%= list[i].local.state %></p>
+                <p class="star-rating">Rating: <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-o"></i></p>
+                <div class="view-profile">
+                  <a href="#">View Profile</a>
                 </div>
               </div>
             </div>
-            <div class="helpersList col-lg-4 col-sm-6 col-xs-12">
-              <div class="search-card">
-                  <img class="img-responsive profile-card-pic" alt="profile image" src='<%= user.local.uploadImg %>' />
-                <div class="user-details">
-                  <p>
-                    <%= user.local.firstName %> <%= user.local.lastName %>
-                  </p>
-                  <p><i class="fa fa-map-marker"></i>  <%= user.local.city %>, <%= user.local.state %></p>
-                  <p class="star-rating">Rating: <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-o"></i></p>
-                  <div class="view-profile">
-                    <a href="#">View Profile</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="helpersList col-lg-4 col-sm-6 col-xs-12">
-              <div class="search-card">
-                  <img class="img-responsive profile-card-pic" alt="profile image" src='<%= user.local.uploadImg %>' />
-                <div class="user-details">
-                  <p>
-                    <%= user.local.firstName %> <%= user.local.lastName %>
-                  </p>
-                  <p><i class="fa fa-map-marker"></i>  <%= user.local.city %>, <%= user.local.state %></p>
-                  <p class="star-rating">Rating: <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-o"></i></p>
-                  <div class="view-profile">
-                    <a href="#">View Profile</a>
-                  </div>
-                </div>
-              </div>
-            </div>
+          </div>
+        <% } %>
       </div>
     </div>
   </div>

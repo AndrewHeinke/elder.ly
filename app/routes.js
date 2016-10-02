@@ -1,3 +1,4 @@
+var User = require('./models/user.js');
 
 module.exports = function(app, passport) {
 
@@ -22,8 +23,16 @@ module.exports = function(app, passport) {
   });
 
   app.get('/search', isLoggedIn, function(req, res) {
-    res.render('pages/search', {
-      user: req.user
+    User.find({}, function(err, doc) {
+      if (err) {
+        res.send(err);
+      }
+      else {
+        res.render('pages/search', {
+          list: doc,
+          user: req.user
+        });
+      }
     });
   });
 

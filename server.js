@@ -28,6 +28,7 @@ var configDB = require('./config/database.js');
 
 // database configuration
 mongoose.connect(configDB.url);
+var db = mongoose.connection;
 
 // log requests to the console
 app.use(morgan('dev'));
