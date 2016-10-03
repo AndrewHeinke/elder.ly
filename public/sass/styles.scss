@@ -4,6 +4,12 @@ $gunmetal-color: #292F36;
 $wild-blue-gray: #9DB4C0;
 $brdr-radius: 7px;
 
+
+/* ======= Mixins ======= */
+@mixin boxShadow() {
+  box-shadow: 0 2px 0 rgba(0,0,0,0.06);
+}
+
 /* ======= Base ======= */
 
 * {
@@ -166,6 +172,7 @@ a {
   -webkit-border-radius: $brdr-radius;
   -moz-border-radius: $brdr-radius;
   border-radius: $brdr-radius;
+  @include boxShadow();
   .info-tab {
     display: block;
     padding: 10px 5px 10px 12px;
@@ -242,6 +249,7 @@ a {
   background: #ffffff;
   padding: 20px;
   border-radius: $brdr-radius;
+  @include boxShadow();
   p {
     font-family: "Helvetica Neue";
     font-size: 16px;
@@ -403,10 +411,7 @@ a {
   .search-card {
     background: #ffffff;
     border-radius: $brdr-radius;
-    filter: drop-shadow(0 8px 10px rgba(0, 0, 0, 0.12))
-            drop-shadow(0 3px 14px rgba(0, 0, 0, 0.14))
-            drop-shadow(0 5px 5px rgba(0, 0, 0, 0.12))
-						drop-shadow(0 -2px 4px rgba(0, 0, 0, 0.1));
+    @include boxShadow();
   }
 
   .profile-card-pic {

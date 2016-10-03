@@ -1,0 +1,52 @@
+<!-- views/profile.ejs -->
+<!DOCTYPE html>
+<html>
+
+<head>
+  <% include ../partials/head %>
+</head>
+
+<body>
+  <% include ../partials/navbar %>
+    <div class="container">
+      <div class="page-header text-center">
+      </div>
+      <div class="row">
+        <div class="col-md-5">
+        <ul id="accordion" class="accordion">
+          <li>
+            <div class="profile-card">
+              <img class="img-responsive profile-card-pic" alt="profile image" src='<%= user.local.uploadImg %>' />
+              <div class="username">
+                <h2><%= list.local.firstName %> <%= list.local.lastName %> </h2>
+                <p><i class="fa fa-briefcase"></i>Volunteer</p>
+                <p><i class="fa fa-map-marker"></i>  <%= list.local.city %>, <%= list.local.state %></p>
+              </div>
+            </div>
+          </li>
+          <li class="default open profile-info">
+            <div class="info-tab">Avg. Rating: <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-o"></i></div>
+            <ul class="submenu">
+              <li><a href="#"><i class="fa fa-birthday-cake"></i> <%= list.local.dob.toDateString() %></a></li>
+              <li><a href="mailto:<%= user.local.email %>"><i class="fa fa-envelope"></i><%= list.local.email %></a></li>
+              <li><a href="#"><i class="fa fa-phone"></i> <%= list.local.phoneNumber %></a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="col-md-7 comment-review">
+        <div class="comment">
+          <h3 class="comment-title">Reviews</h3>
+          <p>
+            Lorem Khaled Ipsum is a major key to success. The other day the grass was brown, now it’s green because I ain’t give up. Never surrender. The weather is amazing, walk with me through the pathway of more success. Take this journey with me, Lion! Bless up. How’s business? Boomin. Celebrate success right, the only way, apple. Wraith talk. Let me be clear, you have to make it through the jungle to make it to paradise, that’s the key, Lion! The key to more success is to have a lot of pillows. You smart, you loyal, you a genius.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    </div>
+
+    <% include ../partials/body %>
+</body>
+
+</html>
