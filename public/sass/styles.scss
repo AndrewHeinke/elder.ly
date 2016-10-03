@@ -261,24 +261,48 @@ a {
 /* ======= Homepage Banner =======*/
 
 .jumbotron {
-    text-align: left;
-    padding-top: 70px;
-    padding-bottom: 70px;
-    background-color: $primary-green;
-    color: #fff;
+    text-align: center;
+    padding-top: 40px 0;
+    // background-color: #ffffff;
+    background: linear-gradient(to left, $primary-green, #00bf8f);
+    // background: linear-gradient(257deg,#27e4f3,#0095da);
+    color: #ffffff;
+    text-shadow: 1px 1px 2px rgba(0,0,0,.35);
+    #banner-button {
+      background: transparent;
+      border: 4px solid #ffffff;
+      padding: 10px 35px;
+      text-shadow: none;
+      font-size: 1.25em;
+      color: #fff;
+      border-radius: $brdr-radius * 2;
+      margin-top: 20px;
+      &:hover {
+        border-radius: 40px;
+        background: rgba(0,0,0,.15);
+        text-shadow: 1px 1px 2px rgba(0,0,0,.35);
+      }
+      @media screen and (max-width: 768px) {
+        margin-top: 0px;
+      }
+    }
+    p {
+      font-size: 2em;
+      @media screen and (max-width: 768px) {
+        font-size: 1.5em;
+      }
+    }
+    .display-3 {
+      font-weight: 700;
+      font-size: 5em;
+      @media screen and (max-width:768px) {
+        font-size: 3em;
+      }
+    }
 }
 
-#banner-button {
-    background: transparent;
-    border: 3px solid #fff;
-    padding: 5px 20px;
-    font-size: 1.5em;
-    color: #fff;
-}
 
-.display-3 {
-  font-weight: 700;
-}
+
 
 /* ======= Sign Up Form =======*/
   form {
