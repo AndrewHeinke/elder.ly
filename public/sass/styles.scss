@@ -356,11 +356,16 @@ a {
 
 .jumbotron {
     text-align: center;
-    padding-top: 40px 0;
-    background: $gunmetal-color;
+    padding: 200px 0;
+    background: url('../img/icon-bg.png') $gunmetal-color no-repeat center center;
     color: #ffffff;
+    background-position-y: -85px;
     margin-bottom: 0px;
     text-shadow: 1px 1px 2px rgba(0,0,0,.35);
+    @media screen and (max-width: 768px) {
+      background-position-y: -5px;
+      background-size: 490px;
+    }
     #banner-button {
       background: linear-gradient(to left, $primary-green, #00bf8f);
       box-shadow: 0 25px 34px -20px darken($primary-green, 5%);
@@ -386,6 +391,7 @@ a {
       }
     }
     .display-3 {
+
       font-weight: 700;
       font-size: 5em;
       text-shadow: 1px 1px 1px rgba(0,0,0,.15);
