@@ -17,6 +17,7 @@ $brdr-radius: 7px;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
+    font-family: 'Work Sans', sans-serif;
 }
 
 body {
@@ -37,6 +38,12 @@ p {
   color: $gunmetal-color;
   line-height: 1.5;
   font-size: 1em;
+  a {
+    color: $primary-green;
+    &:hover {
+      text-decoration: none;
+    }
+  }
 }
 
 a {
@@ -107,7 +114,20 @@ a {
   }
 }
 
-#login-link {}
+#login-link {
+
+}
+
+#sign-up-link {
+  background: linear-gradient(to left, $primary-green, #00bf8f);
+  color: #ffffff;
+  border-radius: $brdr-radius;
+  margin-left: 10px;
+  @media screen and (max-width: 768px) {
+    background: none;
+    margin-left:  0px;
+  }
+}
 
   /* ======= Homepage Styles ======= */
 .instructions {
@@ -584,7 +604,7 @@ a {
     background-image: none;
   }
   body {
-    padding-top: 60px;
+    padding-top: 55px;
   }
   .banner-img {
     display: none;
