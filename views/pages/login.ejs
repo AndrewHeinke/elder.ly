@@ -6,6 +6,7 @@
   <body>
     <% include ../partials/navbar %>
     <div class="container">
+
       <div class="col-sm-6 col-sm-offset-3">
           <h1 class="text-center"><span class="fa fa-sign-in"></span> Login</h1>
           <!-- show any messages that come back with authentication -->
@@ -13,6 +14,7 @@
               <div class="alert alert-danger"><%= message %></div>
           <% } %>
           <!-- LOGIN FORM -->
+          <div class="user-login-box">
           <form action="/login" method="post">
               <div class="form-group input-group-lg">
                   <label>Email</label>
@@ -24,6 +26,7 @@
               </div>
               <button type="submit" class="btn btn-warning btn-lg">Log In</button>
           </form>
+        </div>
       </div>
 
     </div>

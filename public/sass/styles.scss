@@ -376,11 +376,32 @@ a {
 }
 
 /* ======= Sign Up Form =======*/
+
   form {
+    .col-sm-6, .col-sm-12 {
+      @media screen and (max-width: 768px) {
+        padding: 0px;
+      }
+    }
+    .sign-up-button {
+      background: linear-gradient(to left, $primary-green, #00bf8f);
+      box-shadow: 0 25px 34px -20px darken($primary-green, 5%);
+      font-weight: 400;
+      padding: 20px 90px;
+      font-size: 2em;
+      margin-top: 10px;
+      margin-bottom: 50px;
+    }
     .form-control:focus {
       outline: none;
       box-shadow: none;
       border: 2px solid $primary-green;
+    }
+    .form-control {
+      border: 1px solid $wild-blue-gray;
+    }
+    .input-group-lg {
+      margin-bottom: 20px;
     }
 
     .hide-this {
