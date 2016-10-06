@@ -9,7 +9,22 @@ $brdr-radius: 7px;
   box-shadow: 0 2px 0 rgba(0,0,0,0.06);
 }
 
+@mixin castle-pattern() {
+  border: 10px dashed $gunmetal-color;
+  background: #ffffff;
+  margin: 0 auto 30px;
+  box-shadow: 0px 3px 0px 0px rgba(86,201,132,1);
+}
+
+@mixin horizontal-break() {
+  width: 200px;
+  border: 5px solid $primary-green;
+  margin: 0 auto 30px;
+  box-shadow: 0px 3px 0px 0px rgba(86,201,132,1);
+}
+
 /* ======= Base ======= */
+
 
 * {
     margin: 0;
@@ -95,7 +110,7 @@ a {
 
 .navbar-fixed-top {
   padding-top: 10px;
-  border-bottom: 2px solid $wild-blue-gray;
+  border-bottom: 1px solid #cccccc;
   background: #fff;
   .nav {
     padding: 15px 0;
@@ -119,10 +134,13 @@ a {
 }
 
 #sign-up-link {
-  background: linear-gradient(to left, $primary-green, #00bf8f);
+  background: $primary-green;
   color: #ffffff;
   border-radius: $brdr-radius;
   margin-left: 10px;
+  &:hover {
+    background: darken($primary-green, 20%);
+  }
   @media screen and (max-width: 768px) {
     background: none;
     margin-left:  0px;
@@ -142,7 +160,7 @@ a {
     font-family: 'Work Sans';
   }
   .step {
-    padding: 20px;
+    padding: 0px 20px 20px;
     margin: 10px;
   }
   .number {
@@ -161,9 +179,7 @@ a {
     line-height: 1.25;
   }
   #instruct-hr {
-    width: 175px;
-    border: 5px solid $primary-green;
-    margin: 0 auto;
+    @include horizontal-break();
   }
 
   h1 {
@@ -181,11 +197,11 @@ a {
 }
 .details {
   background: linear-gradient(to right, $primary-green, #00bf8f);
-  padding: 10px;
+  padding: 100px 10px;
   h4 {
     font-family: 'Work Sans', sans-serif;
     font-size: 2em;
-    line-height: 1.25;
+    line-height: 1.5;
     color: #ffffff;
   }
   .about-section {
@@ -193,6 +209,68 @@ a {
   }
 }
 
+.testimonials {
+  margin-bottom: 50px;
+  h1 {
+    margin-top: 0px;
+    padding-top: 30px;
+    color: $gunmetal-color;
+    font-weight: 700;
+    padding-bottom: 10px;
+
+    font-size: 4em;
+    @media screen and (max-width: 768px) {
+      font-size: 2.75em;
+    }
+  }
+  .comment-review {
+    margin-top: 10px;
+    @media screen and (max-width: 768px) {
+      margin-top: 20px;
+    }
+  }
+  .comment {
+    padding: 10px 0px;
+    margin-top: 10px;
+    p {
+      color: $gunmetal-color;
+      font-size: 1.25em;
+      line-height: 1.5em;
+    }
+  }
+  .testimonial-img {
+    display: inline-block;
+    @media screen and (max-width: 768px) {
+      display: block;
+      margin: 0 auto;
+    }
+    .old-person {
+      border-radius: $brdr-radius;
+    }
+  }
+  .testimonial-info {
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 15px;
+    margin-top: 20px;
+    .name {
+      color: $wild-blue-gray;
+      font-size: 2em;
+    }
+    .rating {
+      color: #F1C40F;
+      font-size: 2em;
+    }
+    .location {
+      color: $gunmetal-color;
+      font-size: 1.75em;
+    }
+  }
+  #testimonials-hr {
+    @include horizontal-break();
+  }
+
+}
 
 
   /* ======= Profile Card ======= */
@@ -351,6 +429,37 @@ a {
     color: $gunmetal-color;
   }
 }
+
+/* ======= Misc. =======*/
+img.desaturate {
+-webkit-filter: grayscale(100%);
+filter: grayscale(100%);
+opacity: .85;
+}
+
+#logo {
+  width:385;
+  height:auto;
+}
+
+#castle-pattern {
+  @include castle-pattern();
+  margin-bottom: 0px;
+}
+
+footer {
+  background: $gunmetal-color;
+  padding: 20px 10px;
+  p {
+    color: #ffffff;
+  }
+}
+a {
+  &:hover {
+    color: lighten($primary-green, 20%)
+  }
+}
+
 
 /* ======= Homepage Banner =======*/
 
