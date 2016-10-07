@@ -43,7 +43,7 @@ module.exports = function(app, passport) {
 
   // Get a specifc profile page for a user (volunteer)
   app.get('/user/:id', isLoggedIn, function(req, res) {
-    User.findOne({'_id': mongojs.ObjectId(req.params.id)}, function(err, doc) {
+    User.findOne({'_id': req.params.id}, function(err, doc) {
       if (err) {
         res.send(err);
       }

@@ -23,7 +23,7 @@
                 <p><i class="fa fa-map-marker"></i>  <%= list[i].local.city %>, <%= list[i].local.state %></p>
                 <p class="star-rating">Rating: <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-o"></i></p>
                 <div data-id='<%= list[i]._id %>' class="view-profile">
-                  <a data-id='<%= list[i]._id %>' href="#">View Profile</a>
+                  <a class="view-profile" href='/user/<%= list[i]._id %>'>View Profile</a>
                 </div>
               </div>
             </div>
