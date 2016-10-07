@@ -100,6 +100,10 @@ a {
 
 .navbar-toggle .icon-bar {
   background: $gunmetal-color;
+  display: block;
+  width: 30px;
+  height: 4px;
+  border-radius: 1px;
 }
 
 #elderly-logo {
@@ -117,6 +121,9 @@ a {
   }
   .navbar-brand {
     padding: 0 15px;
+    @media screen and (max-width: 480px) {
+      width: 225px;
+    }
   }
 }
 
@@ -151,9 +158,7 @@ a {
 .instructions {
   background-color: #ffffff;
   padding-bottom: 20px;
-  .all-steps {
 
-  }
   h4 {
     font-size: 2em;
     font-weight: 400;
@@ -183,7 +188,7 @@ a {
   }
 
   h1 {
-    margin-top: 0px;
+    margin-top: 20px;
     padding-top: 30px;
     color: $gunmetal-color;
     font-weight: 700;
@@ -198,11 +203,17 @@ a {
 .details {
   background: linear-gradient(to right, $primary-green, #00bf8f);
   padding: 100px 10px;
+  @media screen and (max-width: 480px) {
+    padding: 50px 10px;
+  }
   h4 {
     font-family: 'Work Sans', sans-serif;
     font-size: 2em;
     line-height: 1.5;
     color: #ffffff;
+    @media screen and (max-width: 480px) {
+      font-size: 1.5em;
+    }
   }
   .about-section {
     padding: 20px 0px;
@@ -217,7 +228,6 @@ a {
     color: $gunmetal-color;
     font-weight: 700;
     padding-bottom: 10px;
-
     font-size: 4em;
     @media screen and (max-width: 768px) {
       font-size: 2.75em;
@@ -241,11 +251,14 @@ a {
   .testimonial-img {
     display: inline-block;
     @media screen and (max-width: 768px) {
-      display: block;
-      margin: 0 auto;
+      display: inline-block;
     }
     .old-person {
       border-radius: $brdr-radius;
+      @media screen and (max-width: 480px) {
+        width: 90px;
+        display: inline-block;
+      }
     }
   }
   .testimonial-info {
@@ -253,17 +266,27 @@ a {
     vertical-align: top;
     margin-left: 15px;
     margin-top: 20px;
+    @media screen and (max-width: 480px) {
+      margin-left: 5px;
+      margin-top: 0px;
+    }
     .name {
       color: $wild-blue-gray;
       font-size: 2em;
+      @media screen and (max-width: 480px) {
+        font-size: 1.5em;
+      }
     }
     .rating {
       color: #F1C40F;
-      font-size: 2em;
+      font-size: 1.5em;
     }
     .location {
       color: $gunmetal-color;
       font-size: 1.75em;
+      @media screen and (max-width: 480px) {
+        font-size: 1.25em;
+      }
     }
   }
   #testimonials-hr {
@@ -720,7 +743,7 @@ a {
     background-image: none;
   }
   body {
-    padding-top: 55px;
+    padding-top: 50px;
   }
   .banner-img {
     display: none;
@@ -733,6 +756,9 @@ a {
   }
   .navbar-toggle {
     padding: 6px 0px;
+    @media screen and (max-width: 480px) {
+      padding: 0px;
+    }
   }
   .navbar-fixed-top {
     padding-top: 5px;
