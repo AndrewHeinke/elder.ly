@@ -16,7 +16,7 @@
         <!-- only display these nav options when user is logged in -->
         <% if(login) { %>
           <li>
-            <a href="#">About</a>
+            <a href="/about">About</a>
           </li>
           <li>
             <a href="/search">Find Helpers</a>
@@ -29,10 +29,7 @@
           </li>
          <% } else { %>
            <li>
-             <a href="#">About</a>
-           </li>
-           <li>
-             <a href="#">Services</a>
+             <a href="/about">About</a>
            </li>
            <li>
              <a href="/login" id="login-link">Login</a>

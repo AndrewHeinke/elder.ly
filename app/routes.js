@@ -22,6 +22,12 @@ module.exports = function(app, passport) {
     });
   });
 
+  app.get('/about', function(req, res) {
+    res.render('pages/about', {
+      user: req.user
+    });
+  });
+
   app.get('/search', isLoggedIn, function(req, res) {
     var userState = req.user.local.state;
     var userCity = req.user.local.city;
