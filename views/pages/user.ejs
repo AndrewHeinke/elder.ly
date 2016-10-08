@@ -9,9 +9,7 @@
 <body>
   <% include ../partials/navbar %>
     <div class="container">
-      <div class="page-header text-center">
-      </div>
-      <div class="row">
+      <div class="row marg-top">
         <div class="col-md-4">
         <ul id="accordion" class="accordion">
           <li>
@@ -34,25 +32,29 @@
           </li>
         </ul>
       </div>
-      <div class="col-md-8 comment-review">
 
-        <div class="comment">
-          <h3 class="comment-title">Reviews</h3>
-          <p>
-            Lorem Khaled Ipsum is a major key to success. The other day the grass was brown, now it’s green because I ain’t give up. Never surrender. The weather is amazing, walk with me through the pathway of more success. Take this journey with me, Lion! Bless up. How’s business? Boomin. Celebrate success right, the only way, apple. Wraith talk. Let me be clear, you have to make it through the jungle to make it to paradise, that’s the key, Lion! The key to more success is to have a lot of pillows. You smart, you loyal, you a genius.
-          </p>
+
+      <div class="col-md-8">
+        <div class="comment-review">
+          <div class="comment">
+            <h3 class="comment-title">Reviews</h3>
+            <p>
+              Lorem Khaled Ipsum is a major key to success. The other day the grass was brown, now it’s green because I ain’t give up. Never surrender. The weather is amazing, walk with me through the pathway of more success. Take this journey with me, Lion! Bless up. How’s business? Boomin. Celebrate success right, the only way, apple. Wraith talk. Let me be clear, you have to make it through the jungle to make it to paradise, that’s the key, Lion! The key to more success is to have a lot of pillows. You smart, you loyal, you a genius.
+            </p>
+          </div>
         </div>
-        <div class="review-form">
-          <form action="/user/:id/review" method="post">
-            <div class="form-group">
-              <textarea name="reviewText" class="form-control" placeholder="Message"></textarea>
-            </div>
-            <div class="col-sm-12 text-center">
-              <button type="submit" class="btn btn-primary sign-up-button">Submit</button>
-            </div>
-          </form>
-        </div>
+        <div class="comment-review-form">
+          <h3 class="comment-title">Leave a Comment</h3>
+          <div class="review-form">
+            <form action="/user/:id/review" method="post">
+              <div class="input-group">
+                <textarea id="text-box" name="reviewText" class="form-control custom-control" rows="5" placeholder="Type something in here..." style="resize:none"></textarea>
+                <span type="submit" class="input-group-addon btn btn-primary">Submit</span>
+              </div>
+            </form>
+          </div>
       </div>
+    </div>
     </div>
     </div>
     <% include ../partials/body %>

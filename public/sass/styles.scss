@@ -24,8 +24,6 @@ $brdr-radius: 7px;
 }
 
 /* ======= Base ======= */
-
-
 * {
     margin: 0;
     padding: 0;
@@ -128,15 +126,12 @@ a {
 }
 
 .nav li a {
-  font-size: 1.5em;
+  font-size: 1.15em;
   color: $gunmetal-color;
   &:focus, &:hover {
     background: none;
     color: $primary-green;
   }
-}
-
-#login-link {
 
 }
 
@@ -437,7 +432,7 @@ a {
 .comment-title {
   margin-top: 0px;
   border-bottom: 1px solid $wild-blue-gray;
-  padding-bottom: 10px;
+  padding-bottom: 6px;
 }
 
 .comment-review {
@@ -445,6 +440,7 @@ a {
   padding: 20px;
   border-radius: $brdr-radius;
   @include boxShadow();
+
   p {
     font-family: "Helvetica Neue";
     font-size: 16px;
@@ -453,7 +449,38 @@ a {
   }
 }
 
+.comment-review-form {
+  background: #ffffff;
+  padding: 20px;
+  margin-top: 15px;
+  border-radius: $brdr-radius;
+  @include boxShadow();
+  .comment-title {
+    border-bottom: none;
+  }
+  p {
+    font-family: "Helvetica Neue";
+    font-size: 16px;
+    line-height: 1.5;
+    color: $gunmetal-color;
+  }
+}
+
+
+
 /* ======= Misc. =======*/
+.marg-top {
+  margin-top: 20px;
+}
+#text-box {
+  border: none;
+  background: #efefef;
+}
+
+.input-group-addon {
+  color: #ffffff;
+  font-size: 1.25em;
+}
 img.desaturate {
 -webkit-filter: grayscale(100%);
 filter: grayscale(100%);
@@ -712,12 +739,16 @@ a {
   }
 }
 
-
+@media (min-width: 960px) {
+  .nav li a {
+    font-size: 1.5em;
+  }
+}
 /* Extra small devices (phones, less than 768px) */
 
 @media (min-width: 768px) {
   body {
-    padding-top: 90px;
+    padding-top: 100px;
     /* Required padding for .navbar-fixed-top. Change if height of navigation changes. */
   }
   #elderly-logo {
@@ -748,6 +779,7 @@ a {
   .banner-img {
     display: none;
   }
+
   .navbar-collapse {
     text-align: center;
     font-size: 1.5em;
