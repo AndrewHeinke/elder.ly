@@ -28,7 +28,9 @@
             </div>
           </li>
           <li class="default open profile-info">
-            <div class="info-tab">Avg. Rating: <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-o"></i></div>
+            <%if (user.local.userType == "volunteer") { %>
+              <div class="info-tab">Avg. Rating: <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-o"></i></div>
+            <% } %>
             <ul class="submenu">
               <li><a href="#"><i class="fa fa-birthday-cake"></i> <%= user.local.dob.toDateString() %></a></li>
               <li><a href="mailto:<%= user.local.email %>"><i class="fa fa-envelope"></i><%= user.local.email %></a></li>
