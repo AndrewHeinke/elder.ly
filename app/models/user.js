@@ -1,6 +1,13 @@
 var mongoose = require('mongoose');
 var bcrypt = require('bcrypt-nodejs');
 
+// schema set up for reviews, allows members to write reviews on volunteer pages
+var reviewSchema =  mongoose.Schema({
+  reviewText: String,
+  createdAt: {type: Date, default: Date.now},
+  updatedAt: {type: Date, default: Date.now}
+});
+
 var userSchema = mongoose.Schema ({
   local: {
     userType: {
@@ -50,7 +57,8 @@ var userSchema = mongoose.Schema ({
     online: {
       type: Boolean,
       default: false,
-    }
+    },
+    reviews: [reviewSchema],
   }
 });
 

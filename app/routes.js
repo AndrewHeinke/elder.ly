@@ -57,6 +57,16 @@ module.exports = function(app, passport) {
     });
   });
 
+  // post reviews to specific users page
+  app.post("/user/:id/review", function(req, res) {
+    console.log("Req User: " + req.user);
+    req.user.local.reviews.push(req.body);
+    req.user.save(function(err, question) {
+      if(err) return next(err);
+      res.json(question);
+    });
+  });
+
   app.get('/logout', function(req, res) {
     req.logout();
     res.redirect('/');

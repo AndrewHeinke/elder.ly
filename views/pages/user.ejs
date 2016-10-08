@@ -35,17 +35,26 @@
         </ul>
       </div>
       <div class="col-md-8 comment-review">
+
         <div class="comment">
           <h3 class="comment-title">Reviews</h3>
           <p>
             Lorem Khaled Ipsum is a major key to success. The other day the grass was brown, now it’s green because I ain’t give up. Never surrender. The weather is amazing, walk with me through the pathway of more success. Take this journey with me, Lion! Bless up. How’s business? Boomin. Celebrate success right, the only way, apple. Wraith talk. Let me be clear, you have to make it through the jungle to make it to paradise, that’s the key, Lion! The key to more success is to have a lot of pillows. You smart, you loyal, you a genius.
           </p>
         </div>
+        <div class="review-form">
+          <form action="/user/:id/review" method="post">
+            <div class="form-group">
+              <textarea name="reviewText" class="form-control" placeholder="Message"></textarea>
+            </div>
+            <div class="col-sm-12 text-center">
+              <button type="submit" class="btn btn-primary sign-up-button">Submit</button>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
-
     </div>
-
     <% include ../partials/body %>
 </body>
 
