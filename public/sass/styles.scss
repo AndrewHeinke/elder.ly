@@ -752,6 +752,16 @@ a {
   }
 }
 
+.panel-title {
+  a {
+    text-decoration: none;
+    &:hover {
+      text-decoration: none;
+      color: $gunmetal-color;
+    }
+  }
+}
+
 @media (min-width: 960px) {
   .nav li a {
     font-size: 1.5em;

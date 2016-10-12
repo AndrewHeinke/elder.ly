@@ -12,13 +12,46 @@
       <h1 class="text-center">About</h1>
       <div class="col-md-8 col-md-offset-2">
         <div class="about-copy">
-          <p>
-            This page will house frequently asked questions, information about the developer and disclaimer language for compliance.
-          </p>
+
+          <div class="panel-group" id="accordion">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+        Can I make an account for my elderly mom or dad?</a>
+      </h4>
+              </div>
+              <div id="collapse1" class="panel-collapse collapse in">
+                <div class="panel-body">Absolutely. Simply create an account for the elderly person in your life and utilize this application as a portal to discover helpers in your area.</div>
+              </div>
+            </div>
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
+        Is this service free?</a>
+      </h4>
+              </div>
+              <div id="collapse2" class="panel-collapse collapse">
+                <div class="panel-body">Elderly is completely free! We sign up volunteers in cities all around the country who are ready to help an elderly person in need.</div>
+              </div>
+            </div>
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">
+        Is there an age requirement to sign up?</a>
+      </h4>
+              </div>
+              <div id="collapse3" class="panel-collapse collapse">
+                <div class="panel-body">Elderly volunteers must be 16 years or older. Elderly members must be 60 years or older.</div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  <% include ../partials/body %>
+    <% include ../partials/body %>
 </body>
 
 </html>
