@@ -1,6 +1,6 @@
 var express = require('express');
 var app = express();
-var mongoose = require('mongoose');
+// var mongoose = require('mongoose');
 var passport = require('passport');
 var flash = require('connect-flash');
 
@@ -26,14 +26,14 @@ var session = require('express-session');
 
 var configDB = require('./config/database.js');
 
-if (process.env.MONGODB_URI) {
-  mongoose.connect(process.env.MONGODB_URI);
-} else {
-  mongoose.connect(configDB.url);
-}
+// if (process.env.MONGODB_URI) {
+//   mongoose.connect(process.env.MONGODB_URI);
+// } else {
+//   mongoose.connect(configDB.url);
+// }
 
 // database configuration
-var db = mongoose.connection;
+// var db = mongoose.connection;
 
 // log requests to the console
 app.use(morgan('dev'));

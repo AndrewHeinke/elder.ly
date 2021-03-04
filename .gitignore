@@ -13,6 +13,8 @@ logs
 results
 tmp
 
+package-lock.json
+
 # API keys and secrets
 .env
 
